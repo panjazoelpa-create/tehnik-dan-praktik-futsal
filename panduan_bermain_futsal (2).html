@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan & Taktik Bermain Futsal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        pitch: {
+                            DEFAULT: '#10b981',
+                            dark: '#059669',
+                            lines: '#ffffff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .pitch-bg {
+            background-color: #0d9488;
+            background-image: radial-gradient(#14b8a6 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .futsal-court {
+            background: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+            border: 4px solid #ffffff;
+            position: relative;
+        }
+        .court-line {
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+        .court-circle {
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid font-bold fa-futbol"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-emerald-400 bg-clip-text text-transparent">FutsalMaster</span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="#home" class="hover:text-emerald-400 transition-colors">Beranda</a>
+                    <a href="#aturan" class="hover:text-emerald-400 transition-colors">Aturan & Posisi</a>
+                    <a href="#teknik" class="hover:text-emerald-400 transition-colors">Teknik Utama</a>
+                    <a href="#taktik" class="hover:text-emerald-400 transition-colors">Formasi & Taktik</a>
+                    <a href="#latihan" class="hover:text-emerald-400 transition-colors">Program Latihan</a>
+                    <a href="#kuis" class="hover:text-emerald-400 transition-colors">Kuis</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-800 border-b border-slate-700 px-4 py-3 space-y-3">
+            <a href="#home" class="block text-slate-200 hover:text-emerald-400">Beranda</a>
+            <a href="#aturan" class="block text-slate-200 hover:text-emerald-400">Aturan Dasar</a>
+            <a href="#teknik" class="block text-slate-200 hover:text-emerald-400">Teknik Utama</a>
+            <a href="#taktik" class="block text-slate-200 hover:text-emerald-400">Formasi & Taktik</a>
+            <a href="#kuis" class="block text-slate-200 hover:text-emerald-400">Kuis</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-20 md:pt-36 md:pb-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/10 via-transparent to-slate-900 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-bolt"></i> Panduan Lengkap Pemula & Profesional
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Kuasai Lapangan Futsal dengan <span class="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Teknik & Taktik Tepat</span>
+                    </h1>
+                    <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                        Pelajari aturan resmi, kuasai kontrol sol sepatu (*sole control*), serta pahami pergerakan formasi taktis interaktif dalam futsal modern.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#taktik" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-play"></i> Pelajari Formasi Interaktif
+                        </a>
+                        <a href="#teknik" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold transition-all border border-slate-700 flex items-center justify-center gap-2">
+                            Teknik Dasar <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Feature Banner Graphic -->
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md bg-gradient-to-tr from-slate-800 to-slate-800/80 p-6 rounded-2xl border border-slate-700 shadow-2xl relative">
+                        <div class="flex items-center justify-between mb-4 border-b border-slate-700 pb-3">
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Informasi Singkat Lapangan</span>
+                            <span class="text-xs text-slate-400"><i class="fa-solid fa-users text-emerald-400"></i> 5 vs 5</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-stopwatch"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">Durasi Pertandingan</h4>
+                                    <p class="text-xs text-slate-400">2 x 20 Menit (Waktu bersih/Stopwatch mati saat bola keluar/foul)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-arrows-spin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">Perantian Pemain</h4>
+                                    <p class="text-xs text-slate-400">Bebas & Tidak Terbatas tanpa perlu menghentikan permainan (*Fly substitution*)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-shoe-prints"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">Elemen Kunci</h4>
+                                    <p class="text-xs text-slate-400">Menggunakan Sol Sepatu (*Sole*) untuk mengontrol bola di lapangan keras</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aturan Dasar & Posisi -->
+    <section id="aturan" class="py-16 bg-slate-800/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Aturan Dasar & Posisi Pemain</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Pahami struktur dasar permainan futsal sebelum turun ke lapangan.</p>
+            </div>
+
+            <!-- Posisi Pemain Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Anchor -->
+                <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-6 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Anchor</h3>
+                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-3">Pemain Belakang / Bertahan</span>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Bertindak sebagai penyeimbang tim, pengatur ritme serangan dari belakang, sekaligus benteng pertahanan utama sebelum kiper.
+                    </p>
+                </div>
+
+                <!-- Flank -->
+                <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-6 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Flank (2 Pemain)</h3>
+                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-3">Pemain Sayap (Kiri & Kanan)</span>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Motor serangan tim. Memiliki kecepatan, kelincahan dribel, serta kemampuan passing dan shooting yang akurat dari sisi lapangan.
+                    </p>
+                </div>
+
+                <!-- Pivot -->
+                <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-6 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Pivot</h3>
+                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-3">Penyerang Depan</span>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Target man di depan. Bertugas membelakangi gawang lawan, menahan bola, menyelesaikan peluang, atau membagi bola ke flank.
+                    </p>
+                </div>
+
+                <!-- Kiper -->
+                <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-6 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-hand"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Kiper (Goalkeeper)</h3>
+                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-3">Penjaga Gawang</span>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Garis pertahanan terakhir. Tidak hanya menahan tembakan, kiper modern futsal harus handal dalam memulai serangan balik (*build-up*).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Rules Highlight Cards -->
+            <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 md:p-8">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-exclamation text-emerald-400"></i> Aturan Penting Yang Wajib Diketahui
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-300">
+                    <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-white mb-1 flex items-center gap-2">
+                            <i class="fa-regular fa-clock text-emerald-400"></i> Aturan 4 Detik
+                        </h4>
+                        <p class="text-xs text-slate-400">Pemain hanya punya waktu maksimal 4 detik untuk melakukan kick-in, corner kick, atau lemparan kiper.</p>
+                    </div>
+                    <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-white mb-1 flex items-center gap-2">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> Accumulated Fouls (6x)
+                        </h4>
+                        <p class="text-xs text-slate-400">Jika tim melakukan 6 pelanggaran dalam satu babak, tim lawan mendapat tendangan penalti jarak 10 meter tanpa pagar hidup.</p>
+                    </div>
+                    <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="font-semibold text-white mb-1 flex items-center gap-2">
+                            <i class="fa-solid fa-shoe-prints text-emerald-400"></i> Kick-In (Tendangan Kedalam)
+                        </h4>
+                        <p class="text-xs text-slate-400">Garis lapangan tidak menggunakan lemparan tangan, melainkan tendangan dengan bola harus diam di atas garis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Program Latihan Mingguan -->
+    <section id="latihan" class="py-16 bg-slate-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Rekomendasi Program Latihan</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Panduan jadwal mingguan untuk mengasah stamina dan keterampilan teknis.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Program Pemula -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Level Pemula</span>
+                            <i class="fa-solid fa-seedling text-emerald-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Fokus Fondasi & Kontrol</h3>
+                        <p class="text-xs text-slate-400 mb-4">Meningkatkan sentuhan bola (*first touch*) dan membiasakan penggunaan sol sepatu.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Wall passing (100x ketiap kaki)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Sole control & roll drill</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Jogging & Agility Ladder 15 menit</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs text-slate-400">
+                        Frekuensi: <span class="text-white font-semibold">2 - 3x / Minggu</span>
+                    </div>
+                </div>
+
+                <!-- Program Menengah -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase font-bold text-teal-400 tracking-wider">Level Menengah</span>
+                            <i class="fa-solid fa-dumbbell text-teal-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Kecepatan & Taktik Group</h3>
+                        <p class="text-xs text-slate-400 mb-4">Meningkatkan transisi bertahan ke menyerang serta kombinasi passing 1-2.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Latihan 3 vs 2 Overload</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Sprint Interval (Tabata 20s/10s)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Shooting variasi Dribble & Cocor</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs text-slate-400">
+                        Frekuensi: <span class="text-white font-semibold">3 - 4x / Minggu</span>
+                    </div>
+                </div>
+
+                <!-- Program Lanjutan -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase font-bold text-amber-400 tracking-wider">Level Lanjutan</span>
+                            <i class="fa-solid fa-trophy text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Simulasi Pertandingan & Power Play</h3>
+                        <p class="text-xs text-slate-400 mb-4">Penguasaan taktik rotasi 4-0, set-piece, dan efisiensi pengambilan keputusan.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Simulated match 5v5 High Intensity</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Skenario Power Play & Pressing Trap</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Core & Explosive Power Gym Session</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs text-slate-400">
+                        Frekuensi: <span class="text-white font-semibold">4 - 5x / Minggu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulator Formasi Taktis Interaktif -->
+    <section id="taktik" class="py-16 bg-slate-800/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Formasi & Simulator Taktis</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Pilih formasi untuk melihat posisi dan pergerakan pemain di lapangan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Control Panel Taktik -->
+                <div class="lg:col-span-5 space-y-4">
+                    <h3 class="text-lg font-bold text-white mb-2">Pilih Formasi Taktis:</h3>
+                    
+                    <button onclick="setFormation('3-1')" id="btn-3-1" class="formation-btn w-full text-left p-4 rounded-xl border transition-all bg-emerald-500/20 border-emerald-500 text-white">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold">Formasi 3 - 1 (Standar/Klasik)</span>
+                            <span class="text-xs bg-emerald-500 text-slate-950 font-bold px-2 py-0.5 rounded">Populer</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">1 Anchor, 2 Flank, 1 Pivot. Sangat seimbang untuk bertahan dan menyerang.</p>
+                    </button>
+
+                    <button onclick="setFormation('2-2')" id="btn-2-2" class="formation-btn w-full text-left p-4 rounded-xl border transition-all bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold">Formasi 2 - 2 (Box / Kotak)</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">2 Pemain bertahan & 2 Penyerang. Cocok untuk serangan balik kilat dan pemula.</p>
+                    </button>
+
+                    <button onclick="setFormation('4-0')" id="btn-4-0" class="formation-btn w-full text-left p-4 rounded-xl border transition-all bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold">Formasi 4 - 0 (Modern / Rotasi)</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Tanpa murni Pivot. Semua pemain sejajar dan terus melakukan rotasi dinamis.</p>
+                    </button>
+
+                    <button onclick="setFormation('powerplay')" id="btn-powerplay" class="formation-btn w-full text-left p-4 rounded-xl border transition-all bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold">Power Play (5 vs 4)</span>
+                            <span class="text-xs bg-amber-500/20 text-amber-400 border border-amber-500/30 font-bold px-2 py-0.5 rounded">High Risk</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Kiper ikut naik menyerang ke area lawan saat posisi tertinggal di menit akhir.</p>
+                    </button>
+
+                    <div id="formation-desc" class="p-4 rounded-xl bg-slate-900 border border-slate-700 mt-4 text-xs text-slate-300">
+                        <span class="font-bold text-emerald-400 block mb-1">Catatan Strategi:</span>
+                        Formasi 3-1 mengandalkan Pivot sebagai tembok pemantul bola untuk disambut oleh dua Flank yang melakukan overlapping.
+                    </div>
+                </div>
+
+                <!-- Graphic Interactive Court -->
+                <div class="lg:col-span-7 flex justify-center">
+                    <div class="w-full max-w-md h-[460px] futsal-court rounded-2xl shadow-2xl p-4 flex flex-col justify-between overflow-hidden relative">
+                        <!-- Court Lines -->
+                        <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-white/70"></div>
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 court-circle"></div>
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
+
+                        <!-- Top Penalty Area -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-44 h-20 border-b-2 border-x-2 border-white/80 rounded-b-full"></div>
+                        <!-- Bottom Penalty Area -->
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-44 h-20 border-t-2 border-x-2 border-white/80 rounded-t-full"></div>
+
+                        <!-- Players Layer -->
+                        <div id="court-players" class="absolute inset-0 transition-all duration-700">
+                            <!-- Players elements rendered via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz -->
+    <section id="kuis" class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-10 shadow-xl">
+                <div class="text-center mb-8">
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-semibold rounded-full uppercase">Uji Pemahaman</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Kuis Pengetahuan Futsal</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-1">Uji seberapa jauh pemahaman aturan & taktik futsal Anda.</p>
+                </div>
+
+                <div id="quiz-container">
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
+                            <span id="quiz-progress">Pertanyaan 1 dari 4</span>
+                            <span id="quiz-score-badge" class="font-bold text-emerald-400">Skor: 0</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div id="quiz-bar" class="bg-emerald-500 h-full w-1/4 transition-all duration-300"></div>
+                        </div>
+                    </div>
+
+                    <h3 id="quiz-question" class="text-lg font-bold text-white mb-6">
+                        Berapa detik waktu maksimal yang diberikan untuk melakukan kick-in (tendangan kedalam)?
+                    </h3>
+
+                    <div id="quiz-options" class="space-y-3">
+                        <!-- Options generated via JS -->
+                    </div>
+
+                    <div id="quiz-feedback" class="mt-4 p-3 rounded-xl hidden text-xs sm:text-sm font-medium"></div>
+
+                    <div class="mt-6 flex justify-end">
+                        <button id="next-quiz-btn" onclick="nextQuestion()" class="hidden px-5 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 transition-all">
+                            Pertanyaan Selanjutnya <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Result -->
+                <div id="quiz-result" class="hidden text-center py-8">
+                    <div class="w-20 h-20 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Kuis Selesai!</h3>
+                    <p id="result-text" class="text-slate-300 text-base mb-6">Skor Akhir Anda: 4 / 4</p>
+                    <button onclick="restartQuiz()" class="px-6 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 transition-all">
+                        Coba Lagi <i class="fa-solid fa-rotate-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12 text-slate-400 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2 text-white font-bold text-lg">
+                <i class="fa-solid fa-futbol text-emerald-400"></i> FutsalMaster
+            </div>
+            <p class="max-w-md mx-auto text-slate-500">
+                Panduan interaktif dan media pembelajaran taktik serta teknik bermain futsal modern secara efektif.
+            </p>
+            <div class="pt-4 border-t border-slate-900 text-slate-600">
+                &copy; 2026 FutsalMaster. Dibuat untuk pecinta futsal Indonesia.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tab Switching Logic
+        function switchTab(tabKey) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            // Reset button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700";
+            });
+
+            // Show active content
+            document.getElementById(`content-${tabKey}`).classList.remove('hidden');
+            // Style active button
+            const activeBtn = document.getElementById(`tab-${tabKey}`);
+            activeBtn.className = "tab-btn active px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-emerald-500 text-slate-950 font-bold";
+        }
+
+        // Tactical Formations Data
+        const formations = {
+            '3-1': {
+                desc: '<strong>Formasi 3 - 1 (Klasik)</strong>: Mengandalkan Pivot sebagai tembok pemantul bola untuk disambut oleh dua Flank yang melakukan serangan dari sisi sayap.',
+                players: [
+                    { role: 'GK', label: 'Kiper', top: '88%', left: '48%', bg: 'bg-amber-400 text-slate-950' },
+                    { role: 'ANC', label: 'Anchor', top: '68%', left: '48%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'FLK', label: 'Flank Kiri', top: '48%', left: '20%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'FLK', label: 'Flank Kanan', top: '48%', left: '76%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'PVT', label: 'Pivot', top: '20%', left: '48%', bg: 'bg-emerald-400 text-slate-950' }
+                ]
+            },
+            '2-2': {
+                desc: '<strong>Formasi 2 - 2 (Box)</strong>: Membagi tim menjadi 2 sejajar di belakang dan 2 di depan. Sangat simpel dan efisien untuk pertahanan cepat.',
+                players: [
+                    { role: 'GK', label: 'Kiper', top: '88%', left: '48%', bg: 'bg-amber-400 text-slate-950' },
+                    { role: 'DEF', label: 'Bek Kiri', top: '68%', left: '28%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'DEF', label: 'Bek Kanan', top: '68%', left: '68%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'ATT', label: 'Penyerang Kiri', top: '28%', left: '28%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'ATT', label: 'Penyerang Kanan', top: '28%', left: '68%', bg: 'bg-emerald-400 text-slate-950' }
+                ]
+            },
+            '4-0': {
+                desc: '<strong>Formasi 4 - 0 (Total Futbol)</strong>: Keempat pemain berada sejajar di area pertahanan untuk memancing lawan keluar, lalu melakukan kombinasi satu-dua (*give and go*).',
+                players: [
+                    { role: 'GK', label: 'Kiper', top: '88%', left: '48%', bg: 'bg-amber-400 text-slate-950' },
+                    { role: 'P1', label: 'Pemain 1', top: '62%', left: '15%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'P2', label: 'Pemain 2', top: '68%', left: '38%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'P3', label: 'Pemain 3', top: '68%', left: '58%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'P4', label: 'Pemain 4', top: '62%', left: '81%', bg: 'bg-emerald-400 text-slate-950' }
+                ]
+            },
+            'powerplay': {
+                desc: '<strong>Power Play</strong>: Kiper digantikan atau maju hingga ke lapangan lawan menciptakan situasi keunggulan pemain (5 vs 4) untuk mencetak gol di waktu mendesak.',
+                players: [
+                    { role: 'GK', label: 'Kiper/PG', top: '55%', left: '48%', bg: 'bg-amber-400 text-slate-950' },
+                    { role: 'FLK', label: 'Sayap Kiri', top: '35%', left: '15%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'FLK', label: 'Sayap Kanan', top: '35%', left: '81%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'ATT', label: 'Depan Kiri', top: '18%', left: '30%', bg: 'bg-emerald-400 text-slate-950' },
+                    { role: 'ATT', label: 'Depan Kanan', top: '18%', left: '66%', bg: 'bg-emerald-400 text-slate-950' }
+                ]
+            }
+        };
+
+        function setFormation(key) {
+            // Update buttons styling
+            document.querySelectorAll('.formation-btn').forEach(btn => {
+                btn.className = "formation-btn w-full text-left p-4 rounded-xl border transition-all bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600";
+            });
+            const selectedBtn = document.getElementById(`btn-${key}`);
+            selectedBtn.className = "formation-btn w-full text-left p-4 rounded-xl border transition-all bg-emerald-500/20 border-emerald-500 text-white";
+
+            // Update description text
+            document.getElementById('formation-desc').innerHTML = `<span class="font-bold text-emerald-400 block mb-1">Catatan Strategi:</span>${formations[key].desc}`;
+
+            // Render players on court
+            const court = document.getElementById('court-players');
+            court.innerHTML = '';
+
+            formations[key].players.forEach((p, index) => {
+                const playerEl = document.createElement('div');
+                playerEl.className = `absolute transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center transition-all duration-700 ease-in-out`;
+                playerEl.style.top = p.top;
+                playerEl.style.left = p.left;
+
+                playerEl.innerHTML = `
+                    <div class="w-9 h-9 rounded-full ${p.bg} font-black text-xs flex items-center justify-center shadow-lg border-2 border-slate-900 animate-pulse">
+                        ${p.role}
+                    </div>
+                    <span class="text-[10px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded mt-1 border border-slate-700 whitespace-nowrap">
+                        ${p.label}
+                    </span>
+                `;
+                court.appendChild(playerEl);
+            });
+        }
+
+        // Initialize default formation on load
+        window.addEventListener('DOMContentLoaded', () => {
+            setFormation('3-1');
+            loadQuestion();
+        });
+
+        // Quiz Interactive Data
+        const quizData = [
+            {
+                q: "Berapa detik batas waktu maksimal yang diberikan untuk melakukan kick-in (tendangan kedalam)?",
+                options: ["3 Detik", "4 Detik", "5 Detik", "6 Detik"],
+                answer: 1,
+                explain: "Tepat! Pemain futsal hanya memiliki waktu 4 detik untuk mengeksekusi kick-in, corner, maupun lemparan kiper."
+            },
+            {
+                q: "Bagian sepatu manakah yang paling direkomendasikan untuk mengontrol bola mati dalam futsal?",
+                options: ["Tumit Sepatu", "Punggung Kaki", "Sol Sepatu (Telapak)", "Sisi Luar Sepatu"],
+                answer: 2,
+                explain: "Benar! Sol sepatu (*sole*) adalah kunci kontrol presisi di lapangan keras futsal."
+            },
+            {
+                q: "Apa nama istilah taktik ketika kiper ikut maju menyerang ke area lapangan lawan?",
+                options: ["Counter Attack", "Power Play", "Total Defense", "High Pressing"],
+                answer: 1,
+                explain: "Tepat! Power Play digunakan untuk menciptakan keunggulan jumlah pemain (5 vs 4)."
+            },
+            {
+                q: "Berapa batas foul (pelanggaran) per babak sebelum tim lawan mendapat tendangan penalti tanpa pagar hidup?",
+                options: ["4 Pelanggaran", "5 Pelanggaran", "6 Pelanggaran", "8 Pelanggaran"],
+                answer: 2,
+                explain: "Benar! Pelanggaran akumulasi ke-6 dan seterusnya berbuah tendangan penalti dari titik 10 meter."
+            }
+        ];
+
+        let currentQ = 0;
+        let score = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            answered = false;
+            const q = quizData[currentQ];
+            document.getElementById('quiz-progress').innerText = `Pertanyaan ${currentQ + 1} dari ${quizData.length}`;
+            document.getElementById('quiz-bar').style.width = `${((currentQ + 1) / quizData.length) * 100}%`;
+            document.getElementById('quiz-question').innerText = q.q;
+
+            const optsContainer = document.getElementById('quiz-options');
+            optsContainer.innerHTML = '';
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('next-quiz-btn').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 hover:border-emerald-500 font-medium text-xs sm:text-sm transition-all";
+                btn.innerText = `${String.fromCharCode(65 + idx)}. ${opt}`;
+                btn.onclick = () => selectOption(idx, btn);
+                optsContainer.appendChild(btn);
+            });
+        }
+
+        function selectOption(idx, btn) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizData[currentQ];
+            const opts = document.getElementById('quiz-options').children;
+            const feedback = document.getElementById('quiz-feedback');
+
+            if (idx === q.answer) {
+                score++;
+                btn.className = "w-full text-left p-4 rounded-xl bg-emerald-500/20 border-2 border-emerald-500 text-emerald-300 font-bold text-xs sm:text-sm transition-all";
+                feedback.className = "mt-4 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm";
+                feedback.innerText = q.explain;
+            } else {
+                btn.className = "w-full text-left p-4 rounded-xl bg-rose-500/20 border-2 border-rose-500 text-rose-300 font-bold text-xs sm:text-sm transition-all";
+                opts[q.answer].className = "w-full text-left p-4 rounded-xl bg-emerald-500/20 border-2 border-emerald-500 text-emerald-300 font-bold text-xs sm:text-sm transition-all";
+                feedback.className = "mt-4 p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs sm:text-sm";
+                feedback.innerText = `Salah! ${q.explain}`;
+            }
+
+            document.getElementById('quiz-score-badge').innerText = `Skor: ${score}`;
+            feedback.classList.remove('hidden');
+            document.getElementById('next-quiz-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQ++;
+            if (currentQ < quizData.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            document.getElementById('result-text').innerText = `Anda menjawab benar ${score} dari ${quizData.length} pertanyaan!`;
+        }
+
+        function restartQuiz() {
+            currentQ = 0;
+            score = 0;
+            document.getElementById('quiz-score-badge').innerText = `Skor: 0`;
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            loadQuestion();
+        }
+    </script>
+</body>
+</html>
